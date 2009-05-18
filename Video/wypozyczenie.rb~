@@ -1,0 +1,5 @@
+class Wypozyczenie
+    set_table_name 'Wypozyczenia'
+    belongs_to :pracownik
+
+end

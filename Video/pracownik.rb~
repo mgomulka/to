@@ -1,0 +1,16 @@
+require 'rubygems'
+require 'active_record'
+require 'yaml'
+
+#dbconfig = YAML::load(File.open('database.yml'))
+ActiveRecord::Base.establish_connection(:adapter => 'mysql',
+                                        :database => 'video_rental',
+                                        :username => 'root',
+                                        :password => 'tinspoon101',
+                                        :host => 'localhost')
+
+class Pracownik < ActiveRecord::Base
+
+  set_table_name 'Pracownicy'
+  has_many :wypozyczenia
+end
